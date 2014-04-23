@@ -1,0 +1,16 @@
+calendar.o: calendar.cpp common.h conf.h utils.h qw.h http.h irc.h \
+  events.h calendar.h
+conf.o: conf.cpp conf.h utils.h irc.h
+events.o: events.cpp common.h conf.h utils.h qw.h http.h irc.h events.h \
+  calendar.h
+http.o: http.cpp common.h utils.h conf.h qw.h sockets.h
+irc.o: irc.cpp conf.h common.h utils.h \
+  libircclient/include/libircclient.h \
+  libircclient/include/libirc_errors.h \
+  libircclient/include/libirc_events.h \
+  libircclient/include/libirc_options.h qw.h
+main.o: main.cpp common.h conf.h utils.h qw.h http.h irc.h events.h \
+  calendar.h
+qw.o: qw.cpp conf.h common.h utils.h qw.h sockets.h
+sockets.o: sockets.cpp
+utils.o: utils.cpp utils.h
